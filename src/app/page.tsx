@@ -2,6 +2,16 @@
 
 import { useState } from 'react';
 import styles from './page.module.css';
+export const direction = [
+  [-1, 0],
+  [-1, 1],
+  [0, 1],
+  [1, 1],
+  [1, 0],
+  [1, -1],
+  [0, -1],
+  [-1, -1],
+];
 
 export default function Home() {
   const [turnColor, setTurnColor] = useState(1);
@@ -18,7 +28,12 @@ export default function Home() {
   const clickHander = (x: number, y: number) => {
     console.log(x, y);
     const newBoard = structuredClone(board);
-    if (board[y + 1] !== undefined && board[y + 1][x] === 3 - turnColor) {
+    if (
+      (board[y + 1] !== undefined && board[y + 1][x] === 3 - turnColor) ||
+      (board[y - 1] !== undefined && board[y - 1][x] === 3 - turnColor) ||
+      (board[x + 1] !== undefined && board[y][x + 1] === 3 - turnColor) ||
+      (board[x - 1] !== undefined && board[y][x - 1] === 3 - turnColor)
+    ) {
       newBoard[y][x] = turnColor;
       newBoard[y][x] = turnColor;
       setBoard(newBoard);
