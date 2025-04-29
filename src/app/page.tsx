@@ -12,7 +12,6 @@ export const direction = [
   [0, -1],
   [-1, -1],
 ];
-
 export default function Home() {
   const [turnColor, setTurnColor] = useState(1);
   const [board, setBoard] = useState([
@@ -25,6 +24,7 @@ export default function Home() {
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],
   ]);
+
   const clickHander = (x: number, y: number) => {
     console.log(x, y);
     const newBoard = structuredClone(board);
@@ -38,7 +38,7 @@ export default function Home() {
       newBoard[y][x] = turnColor;
       setBoard(newBoard);
       setTurnColor(3 - turnColor);
-    }
+    } else print();
   };
   return (
     <div className={styles.container}>
