@@ -29,14 +29,14 @@ export default function Home() {
     console.log(x, y);
     const newBoard = structuredClone(board);
     if (
-      (board[y + 1] !== undefined && board[y + 1][x] === 3 - turnColor) ||
-      (board[y - 1] !== undefined && board[y - 1][x] === 3 - turnColor) ||
-      (board[x + 1] !== undefined && board[y][x + 1] === 3 - turnColor) ||
-      (board[x - 1] !== undefined && board[y][x - 1] === 3 - turnColor) ||
-      (board[y + 1][x + 1] !== undefined && board[y + 1][x + 1] === 3 - turnColor) ||
-      (board[y + 1][x - 1] !== undefined && board[y + 1][x - 1] === 3 - turnColor) ||
-      (board[y - 1][x + 1] !== undefined && board[y + 1][x + 1] === 3 - turnColor) ||
-      (board[y - 1][x - 1] !== undefined && board[y + 1][x - 1] === 3 - turnColor)
+      (y + 1 < 8 && board[y + 1][x] === 3 - turnColor) ||
+      (y - 1 >= 0 && board[y - 1][x] === 3 - turnColor) ||
+      (x + 1 < 8 && board[y][x + 1] === 3 - turnColor) ||
+      (x - 1 >= 0 && board[y][x - 1] === 3 - turnColor) ||
+      (y + 1 < 8 && x + 1 < 8 && board[y + 1][x + 1] === 3 - turnColor) ||
+      (y + 1 < 8 && x - 1 >= 0 && board[y + 1][x - 1] === 3 - turnColor) ||
+      (y - 1 >= 0 && x + 1 < 8 && board[y - 1][x + 1] === 3 - turnColor) ||
+      (y - 1 >= 0 && x - 1 >= 0 && board[y - 1][x - 1] === 3 - turnColor)
     ) {
       newBoard[y][x] = turnColor;
       newBoard[y][x] = turnColor;
