@@ -35,8 +35,8 @@ export default function Home() {
       (board[x - 1] !== undefined && board[y][x - 1] === 3 - turnColor) ||
       (board[y + 1][x + 1] !== undefined && board[y + 1][x + 1] === 3 - turnColor) ||
       (board[y + 1][x - 1] !== undefined && board[y + 1][x - 1] === 3 - turnColor) ||
-      (board[y + 1][x] !== undefined && board[y + 1][x] === 3 - turnColor) ||
-      (board[y + 1][x] !== undefined && board[y + 1][x] === 3 - turnColor)
+      (board[y - 1][x + 1] !== undefined && board[y + 1][x + 1] === 3 - turnColor) ||
+      (board[y - 1][x - 1] !== undefined && board[y + 1][x - 1] === 3 - turnColor)
     ) {
       newBoard[y][x] = turnColor;
       newBoard[y][x] = turnColor;
