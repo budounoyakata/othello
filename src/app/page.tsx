@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import styles from './page.module.css';
-export const direction = [
+export const directions = [
   [-1, 0],
   [-1, 1],
   [0, 1],
@@ -571,7 +571,30 @@ export default function Home() {
         board[y - 7][x - 7] === turnColor)
     ) {
       newBoard[y][x] = turnColor;
-      newBoard[y][x] = turnColor;
+      for (const [dx, dy] of directions) {
+        let i: number = y + dy;
+        let j: number = x + dx;
+        const disksToFlip: [number, number][] = []; // ひっくり返す候補
+
+        // 途中の駒がすべて相手の駒で、最後に自分の駒があるかチェック
+        while (i >= 0 && i < board.length && j >= 0 && j < board[i].length) {
+          if (board[i][j] === ' ') {
+            break; // 空きマスならひっくり返せないので終了
+          } else if (board[i][j] === turnColor) {
+            // 自分の駒が見つかったら間の駒をひっくり返す
+            for (const [flipY, flipX] of disksToFlip) {
+              board[flipY][flipX] = turnColor;
+            }
+            break;
+          } else {
+            // 相手の駒ならひっくり返し候補に追加
+            disksToFlip.push([i, j]);
+          }
+          i += dy;
+          j += dx;
+        }
+      }
+
       setBoard(newBoard);
       setTurnColor(3 - turnColor);
     }
