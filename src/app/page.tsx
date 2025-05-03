@@ -12,7 +12,6 @@ export const directions = [
   [0, -1],
   [-1, -1],
 ];
-const disksToFlip: [number, number][] = []; // ひっくり返す候補
 
 export default function Home() {
   const [turnColor, setTurnColor] = useState(1);
@@ -575,29 +574,31 @@ export default function Home() {
       for (const [dx, dy] of directions) {
         let i = y + dy;
         let j = x + dx;
-        console.log('型チェック:', typeof board[i][j]);
         const disksToFlip: [number, number][] = [];
-
-        while (i >= 0 && i < board.length && j >= 0 && j < board[i].length) {
+        while (i >= 0 && i < 8 && j >= 0 && j < 8) {
+          console.log('探索中の座標:', i, j, '駒の状態:', board[i]?.[j]);
           if (board[i][j] === 0) {
             break; // 空のマスならひっくり返せないので終了
+            console.log('ループ終了:', i, j);
           } else if (board[i][j] === turnColor) {
             // 自分の駒が見つかったら間の駒をひっくり返す
             for (const [flipY, flipX] of disksToFlip) {
-              board[flipY][flipX] = turnColor;
+              console.log('ひっくり返し処理:', flipY, flipX);
+              newBoard[flipY][flipX] = turnColor;
             }
             break;
           } else {
             // 相手の駒ならリストに追加
             disksToFlip.push([i, j]);
+            console.log('ひっくり返す候補:', JSON.stringify(disksToFlip));
           }
           i += dy;
           j += dx;
         }
       }
+      setBoard(newBoard);
+      setTurnColor(3 - turnColor);
     }
-    setBoard(newBoard);
-    setTurnColor(3 - turnColor);
   };
 
   return (
