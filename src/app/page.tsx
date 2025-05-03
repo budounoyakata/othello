@@ -28,579 +28,579 @@ export default function Home() {
   const clickHander = (x: number, y: number) => {
     console.log(x, y);
     const newBoard = structuredClone(board);
-    if (
-      (y - 1 >= 0 &&
-        board[y - 1][x] === 3 - turnColor &&
-        y - 2 >= 0 &&
-        board[y - 2][x] === turnColor) ||
-      (y - 1 >= 0 &&
-        board[y - 1][x] === 3 - turnColor &&
-        y - 2 >= 0 &&
-        board[y - 2][x] === 3 - turnColor &&
-        y - 3 >= 0 &&
-        board[y - 3][x] === turnColor) ||
-      (y - 1 >= 0 &&
-        board[y - 1][x] === 3 - turnColor &&
-        y - 2 >= 0 &&
-        board[y - 2][x] === 3 - turnColor &&
-        y - 3 >= 0 &&
-        board[y - 3][x] === 3 - turnColor &&
-        y - 4 >= 0 &&
-        board[y - 4][x] === turnColor) ||
-      (y - 1 >= 0 &&
-        board[y - 1][x] === 3 - turnColor &&
-        y - 2 >= 0 &&
-        board[y - 2][x] === 3 - turnColor &&
-        y - 3 >= 0 &&
-        board[y - 3][x] === 3 - turnColor &&
-        y - 4 >= 0 &&
-        board[y - 4][x] === 3 - turnColor &&
-        y - 5 >= 0 &&
-        board[y - 5][x] === turnColor) ||
-      (y - 1 >= 0 &&
-        board[y - 1][x] === 3 - turnColor &&
-        y - 2 >= 0 &&
-        board[y - 2][x] === 3 - turnColor &&
-        y - 3 >= 0 &&
-        board[y - 3][x] === 3 - turnColor &&
-        y - 4 >= 0 &&
-        board[y - 4][x] === 3 - turnColor &&
-        y - 5 >= 0 &&
-        board[y - 5][x] === 3 - turnColor &&
-        y - 6 >= 0 &&
-        board[y - 6][x] === turnColor) ||
-      (y - 1 >= 0 &&
-        board[y - 1][x] === 3 - turnColor &&
-        y - 2 >= 0 &&
-        board[y - 2][x] === 3 - turnColor &&
-        y - 3 >= 0 &&
-        board[y - 3][x] === 3 - turnColor &&
-        y - 4 >= 0 &&
-        board[y - 4][x] === 3 - turnColor &&
-        y - 5 >= 0 &&
-        board[y - 5][x] === 3 - turnColor &&
-        y - 6 >= 0 &&
-        board[y - 6][x] === 3 - turnColor &&
-        y - 7 >= 0 &&
-        board[y - 7][x] === turnColor) ||
-      (y + 1 < 8 &&
-        board[y + 1][x] === 3 - turnColor &&
-        y + 2 < 8 &&
-        board[y + 2][x] === turnColor) ||
-      (y + 1 < 8 &&
-        board[y + 1][x] === 3 - turnColor &&
-        y + 2 < 8 &&
-        board[y + 2][x] === 3 - turnColor &&
-        y + 3 < 8 &&
-        board[y + 3][x] === turnColor) ||
-      (y + 1 < 8 &&
-        board[y + 1][x] === 3 - turnColor &&
-        y + 2 < 8 &&
-        board[y + 2][x] === 3 - turnColor &&
-        y + 3 < 8 &&
-        board[y + 3][x] === 3 - turnColor &&
-        y + 4 < 8 &&
-        board[y + 4][x] === turnColor) ||
-      (y + 1 < 8 &&
-        board[y + 1][x] === 3 - turnColor &&
-        y + 2 < 8 &&
-        board[y + 2][x] === 3 - turnColor &&
-        y + 3 < 8 &&
-        board[y + 3][x] === 3 - turnColor &&
-        y + 4 < 8 &&
-        board[y + 4][x] === 3 - turnColor &&
-        y + 5 < 8 &&
-        board[y + 5][x] === turnColor) ||
-      (y + 1 < 8 &&
-        board[y + 1][x] === 3 - turnColor &&
-        y + 2 < 8 &&
-        board[y + 2][x] === 3 - turnColor &&
-        y + 3 < 8 &&
-        board[y + 3][x] === 3 - turnColor &&
-        y + 4 < 8 &&
-        board[y + 4][x] === 3 - turnColor &&
-        y + 5 < 8 &&
-        board[y + 5][x] === 3 - turnColor &&
-        y + 6 < 8 &&
-        board[y + 6][x] === turnColor) ||
-      (y + 1 < 8 &&
-        board[y + 1][x] === 3 - turnColor &&
-        y + 2 < 8 &&
-        board[y + 2][x] === 3 - turnColor &&
-        y + 3 < 8 &&
-        board[y + 3][x] === 3 - turnColor &&
-        y + 4 < 8 &&
-        board[y + 4][x] === 3 - turnColor &&
-        y + 5 < 8 &&
-        board[y + 5][x] === 3 - turnColor &&
-        y + 6 < 8 &&
-        board[y + 6][x] === 3 - turnColor &&
-        y + 7 < 8 &&
-        board[y + 7][x] === turnColor) ||
-      (x - 1 >= 0 &&
-        board[y][x - 1] === 3 - turnColor &&
-        x - 2 >= 0 &&
-        board[y][x - 2] === turnColor) ||
-      (x - 1 >= 0 &&
-        board[y][x - 1] === 3 - turnColor &&
-        x - 2 >= 0 &&
-        board[y][x - 2] === 3 - turnColor &&
-        x - 3 >= 0 &&
-        board[y][x - 3] === turnColor) ||
-      (x - 1 >= 0 &&
-        board[y][x - 1] === 3 - turnColor &&
-        x - 2 >= 0 &&
-        board[y][x - 2] === 3 - turnColor &&
-        x - 3 >= 0 &&
-        board[y][x - 3] === 3 - turnColor &&
-        x - 4 >= 0 &&
-        board[y][x - 4] === turnColor) ||
-      (x - 1 >= 0 &&
-        board[y][x - 1] === 3 - turnColor &&
-        x - 2 >= 0 &&
-        board[y][x - 2] === 3 - turnColor &&
-        x - 3 >= 0 &&
-        board[y][x - 3] === 3 - turnColor &&
-        x - 4 >= 0 &&
-        board[y][x - 4] === 3 - turnColor &&
-        x - 5 >= 0 &&
-        board[y][x - 5] === turnColor) ||
-      (x - 1 >= 0 &&
-        board[y][x - 1] === 3 - turnColor &&
-        x - 2 >= 0 &&
-        board[y][x - 2] === 3 - turnColor &&
-        x - 3 >= 0 &&
-        board[y][x - 3] === 3 - turnColor &&
-        x - 4 >= 0 &&
-        board[y][x - 4] === 3 - turnColor &&
-        x - 5 >= 0 &&
-        board[y][x - 5] === 3 - turnColor &&
-        x - 6 >= 0 &&
-        board[y][x - 6] === turnColor) ||
-      (x - 1 >= 0 &&
-        board[y][x - 1] === 3 - turnColor &&
-        x - 2 >= 0 &&
-        board[y][x - 2] === 3 - turnColor &&
-        x - 3 >= 0 &&
-        board[y][x - 3] === 3 - turnColor &&
-        x - 4 >= 0 &&
-        board[y][x - 4] === 3 - turnColor &&
-        x - 5 >= 0 &&
-        board[y][x - 5] === 3 - turnColor &&
-        x - 6 >= 0 &&
-        board[y][x - 6] === 3 - turnColor &&
-        x - 7 >= 0 &&
-        board[y][x - 7] === turnColor) ||
-      (x + 1 < 8 &&
-        board[y][x + 1] === 3 - turnColor &&
-        x + 2 < 8 &&
-        board[y][x + 2] === turnColor) ||
-      (x + 1 < 8 &&
-        board[y][x + 1] === 3 - turnColor &&
-        x + 2 < 8 &&
-        board[y][x + 2] === 3 - turnColor &&
-        x + 3 < 8 &&
-        board[y][x + 3] === turnColor) ||
-      (x + 1 < 8 &&
-        board[y][x + 1] === 3 - turnColor &&
-        x + 2 < 8 &&
-        board[y][x + 2] === 3 - turnColor &&
-        x + 3 < 8 &&
-        board[y][x + 3] === 3 - turnColor &&
-        x + 4 < 8 &&
-        board[y][x + 4] === turnColor) ||
-      (x + 1 < 8 &&
-        board[y][x + 1] === 3 - turnColor &&
-        x + 2 < 8 &&
-        board[y][x + 2] === 3 - turnColor &&
-        x + 3 < 8 &&
-        board[y][x + 3] === 3 - turnColor &&
-        x + 4 < 8 &&
-        board[y][x + 4] === 3 - turnColor &&
-        x + 5 < 8 &&
-        board[y][x + 5] === turnColor) ||
-      (x + 1 < 8 &&
-        board[y][x + 1] === 3 - turnColor &&
-        x + 2 < 8 &&
-        board[y][x + 2] === 3 - turnColor &&
-        x + 3 < 8 &&
-        board[y][x + 3] === 3 - turnColor &&
-        x + 4 < 8 &&
-        board[y][x + 4] === 3 - turnColor &&
-        x + 5 < 8 &&
-        board[y][x + 5] === 3 - turnColor &&
-        x + 6 < 8 &&
-        board[y][x + 6] === turnColor) ||
-      (x + 1 < 8 &&
-        board[y][x + 1] === 3 - turnColor &&
-        x + 2 < 8 &&
-        board[y][x + 2] === 3 - turnColor &&
-        x + 3 < 8 &&
-        board[y][x + 3] === 3 - turnColor &&
-        x + 4 < 8 &&
-        board[y][x + 4] === 3 - turnColor &&
-        x + 5 < 8 &&
-        board[y][x + 5] === 3 - turnColor &&
-        x + 6 < 8 &&
-        board[y][x + 6] === 3 - turnColor &&
-        x + 7 < 8 &&
-        board[y][x + 7] === turnColor) ||
-      (y + 1 < 8 &&
-        x + 1 < 8 &&
-        board[y + 1][x + 1] === 3 - turnColor &&
-        y + 2 < 8 &&
-        x + 2 < 8 &&
-        board[y + 2][x + 2] === turnColor) ||
-      (y + 1 < 8 &&
-        x + 1 < 8 &&
-        board[y + 1][x + 1] === 3 - turnColor &&
-        y + 2 < 8 &&
-        x + 2 < 8 &&
-        board[y + 2][x + 2] === 3 - turnColor &&
-        y + 3 < 8 &&
-        x + 3 < 8 &&
-        board[y + 3][x + 3] === turnColor) ||
-      (y + 1 < 8 &&
-        x + 1 < 8 &&
-        board[y + 1][x + 1] === 3 - turnColor &&
-        y + 2 < 8 &&
-        x + 2 < 8 &&
-        board[y + 2][x + 2] === 3 - turnColor &&
-        y + 3 < 8 &&
-        x + 3 < 8 &&
-        board[y + 3][x + 3] === 3 - turnColor &&
-        y + 4 < 8 &&
-        x + 4 < 8 &&
-        board[y + 4][x + 4] === turnColor) ||
-      (y + 1 < 8 &&
-        x + 1 < 8 &&
-        board[y + 1][x + 1] === 3 - turnColor &&
-        y + 2 < 8 &&
-        x + 2 < 8 &&
-        board[y + 2][x + 2] === 3 - turnColor &&
-        y + 3 < 8 &&
-        x + 3 < 8 &&
-        board[y + 3][x + 3] === 3 - turnColor &&
-        y + 4 < 8 &&
-        x + 4 < 8 &&
-        board[y + 4][x + 4] === 3 - turnColor &&
-        y + 5 < 8 &&
-        x + 5 < 8 &&
-        board[y + 5][x + 5] === turnColor) ||
-      (y + 1 < 8 &&
-        x + 1 < 8 &&
-        board[y + 1][x + 1] === 3 - turnColor &&
-        y + 2 < 8 &&
-        x + 2 < 8 &&
-        board[y + 2][x + 2] === 3 - turnColor &&
-        y + 3 < 8 &&
-        x + 3 < 8 &&
-        board[y + 3][x + 3] === 3 - turnColor &&
-        y + 4 < 8 &&
-        x + 4 < 8 &&
-        board[y + 4][x + 4] === 3 - turnColor &&
-        y + 5 < 8 &&
-        x + 5 < 8 &&
-        board[y + 5][x + 5] === 3 - turnColor &&
-        y + 6 < 8 &&
-        x + 6 < 8 &&
-        board[y + 6][x + 6] === turnColor) ||
-      (y + 1 < 8 &&
-        x + 1 < 8 &&
-        board[y + 1][x + 1] === 3 - turnColor &&
-        y + 2 < 8 &&
-        x + 2 < 8 &&
-        board[y + 2][x + 2] === 3 - turnColor &&
-        y + 3 < 8 &&
-        x + 3 < 8 &&
-        board[y + 3][x + 3] === 3 - turnColor &&
-        y + 4 < 8 &&
-        x + 4 < 8 &&
-        board[y + 4][x + 4] === 3 - turnColor &&
-        y + 5 < 8 &&
-        x + 5 < 8 &&
-        board[y + 5][x + 5] === 3 - turnColor &&
-        y + 6 < 8 &&
-        x + 6 < 8 &&
-        board[y + 6][x + 6] === 3 - turnColor &&
-        y + 7 < 8 &&
-        x + 7 < 8 &&
-        board[y + 7][x + 7] === turnColor) ||
-      (y + 1 < 8 &&
-        x - 1 >= 0 &&
-        board[y + 1][x - 1] === 3 - turnColor &&
-        y + 2 < 8 &&
-        x - 2 >= 0 &&
-        board[y + 2][x - 2] === turnColor) ||
-      (y + 1 < 8 &&
-        x - 1 >= 0 &&
-        board[y + 1][x - 1] === 3 - turnColor &&
-        y + 2 < 8 &&
-        x - 2 >= 0 &&
-        board[y + 2][x - 2] === 3 - turnColor &&
-        y + 3 < 8 &&
-        x - 3 >= 0 &&
-        board[y + 3][x - 3] === turnColor) ||
-      (y + 1 < 8 &&
-        x - 1 >= 0 &&
-        board[y + 1][x - 1] === 3 - turnColor &&
-        y + 2 < 8 &&
-        x - 2 >= 0 &&
-        board[y + 2][x - 2] === 3 - turnColor &&
-        y + 3 < 8 &&
-        x - 3 >= 0 &&
-        board[y + 3][x - 3] === 3 - turnColor &&
-        y + 4 < 8 &&
-        x - 4 >= 0 &&
-        board[y + 4][x - 4] === turnColor) ||
-      (y + 1 < 8 &&
-        x - 1 >= 0 &&
-        board[y + 1][x - 1] === 3 - turnColor &&
-        y + 2 < 8 &&
-        x - 2 >= 0 &&
-        board[y + 2][x - 2] === 3 - turnColor &&
-        y + 3 < 8 &&
-        x - 3 >= 0 &&
-        board[y + 3][x - 3] === 3 - turnColor &&
-        y + 4 < 8 &&
-        x - 4 >= 0 &&
-        board[y + 4][x - 4] === 3 - turnColor &&
-        y + 5 < 8 &&
-        x - 5 >= 0 &&
-        board[y + 5][x - 5] === turnColor) ||
-      (y + 1 < 8 &&
-        x - 1 >= 0 &&
-        board[y + 1][x - 1] === 3 - turnColor &&
-        y + 2 < 8 &&
-        x - 2 >= 0 &&
-        board[y + 2][x - 2] === 3 - turnColor &&
-        y + 3 < 8 &&
-        x - 3 >= 0 &&
-        board[y + 3][x - 3] === 3 - turnColor &&
-        y + 4 < 8 &&
-        x - 4 >= 0 &&
-        board[y + 4][x - 4] === 3 - turnColor &&
-        y + 5 < 8 &&
-        x - 5 >= 0 &&
-        board[y + 5][x - 5] === 3 - turnColor &&
-        y + 6 < 8 &&
-        x - 6 >= 0 &&
-        board[y + 6][x - 6] === turnColor) ||
-      (y + 1 < 8 &&
-        x - 1 >= 0 &&
-        board[y + 1][x - 1] === 3 - turnColor &&
-        y + 2 < 8 &&
-        x - 2 >= 0 &&
-        board[y + 2][x - 2] === 3 - turnColor &&
-        y + 3 < 8 &&
-        x - 3 >= 0 &&
-        board[y + 3][x - 3] === 3 - turnColor &&
-        y + 4 < 8 &&
-        x - 4 >= 0 &&
-        board[y + 4][x - 4] === 3 - turnColor &&
-        y + 5 < 8 &&
-        x - 5 >= 0 &&
-        board[y + 5][x - 5] === 3 - turnColor &&
-        y + 6 < 8 &&
-        x - 6 >= 0 &&
-        board[y + 6][x - 6] === 3 - turnColor &&
-        y + 7 < 8 &&
-        x - 7 >= 0 &&
-        board[y + 7][x - 7] === turnColor) ||
-      (y - 1 >= 0 &&
-        x + 1 < 8 &&
-        board[y - 1][x + 1] === 3 - turnColor &&
-        y - 2 >= 0 &&
-        x + 2 < 8 &&
-        board[y - 2][x + 2] === turnColor) ||
-      (y - 1 >= 0 &&
-        x + 1 < 8 &&
-        board[y - 1][x + 1] === 3 - turnColor &&
-        y - 2 >= 0 &&
-        x + 2 < 8 &&
-        board[y - 2][x + 2] === 3 - turnColor &&
-        y - 3 >= 0 &&
-        x + 3 < 8 &&
-        board[y - 3][x + 3] === turnColor) ||
-      (y - 1 >= 0 &&
-        x + 1 < 8 &&
-        board[y - 1][x + 1] === 3 - turnColor &&
-        y - 2 >= 0 &&
-        x + 2 < 8 &&
-        board[y - 2][x + 2] === 3 - turnColor &&
-        y - 3 >= 0 &&
-        x + 3 < 8 &&
-        board[y - 3][x + 3] === 3 - turnColor &&
-        y - 4 >= 0 &&
-        x + 4 < 8 &&
-        board[y - 4][x + 4] === turnColor) ||
-      (y - 1 >= 0 &&
-        x + 1 < 8 &&
-        board[y - 1][x + 1] === 3 - turnColor &&
-        y - 2 >= 0 &&
-        x + 2 < 8 &&
-        board[y - 2][x + 2] === 3 - turnColor &&
-        y - 3 >= 0 &&
-        x + 3 < 8 &&
-        board[y - 3][x + 3] === 3 - turnColor &&
-        y - 4 >= 0 &&
-        x + 4 < 8 &&
-        board[y - 4][x + 4] === 3 - turnColor &&
-        y - 5 >= 0 &&
-        x + 5 < 8 &&
-        board[y - 5][x + 5] === turnColor) ||
-      (y - 1 >= 0 &&
-        x + 1 < 8 &&
-        board[y - 1][x + 1] === 3 - turnColor &&
-        y - 2 >= 0 &&
-        x + 2 < 8 &&
-        board[y - 2][x + 2] === 3 - turnColor &&
-        y - 3 >= 0 &&
-        x + 3 < 8 &&
-        board[y - 3][x + 3] === 3 - turnColor &&
-        y - 4 >= 0 &&
-        x + 4 < 8 &&
-        board[y - 4][x + 4] === 3 - turnColor &&
-        y - 5 >= 0 &&
-        x + 5 < 8 &&
-        board[y - 5][x + 5] === 3 - turnColor &&
-        y - 6 >= 0 &&
-        x + 6 < 8 &&
-        board[y - 6][x + 6] === turnColor) ||
-      (y - 1 >= 0 &&
-        x + 1 < 8 &&
-        board[y - 1][x + 1] === 3 - turnColor &&
-        y - 2 >= 0 &&
-        x + 2 < 8 &&
-        board[y - 2][x + 2] === 3 - turnColor &&
-        y - 3 >= 0 &&
-        x + 3 < 8 &&
-        board[y - 3][x + 3] === 3 - turnColor &&
-        y - 4 >= 0 &&
-        x + 4 < 8 &&
-        board[y - 4][x + 4] === 3 - turnColor &&
-        y - 5 >= 0 &&
-        x + 5 < 8 &&
-        board[y - 5][x + 5] === 3 - turnColor &&
-        y - 6 >= 0 &&
-        x + 6 < 8 &&
-        board[y - 6][x + 6] === 3 - turnColor &&
-        y - 7 >= 0 &&
-        x + 7 < 8 &&
-        board[y - 7][x + 7] === turnColor) ||
-      (y - 1 >= 0 &&
-        x - 1 >= 0 &&
-        board[y - 1][x - 1] === 3 - turnColor &&
-        y - 2 >= 0 &&
-        x - 2 >= 0 &&
-        board[y - 2][x - 2] === turnColor) ||
-      (y - 1 >= 0 &&
-        x - 1 >= 0 &&
-        board[y - 1][x - 1] === 3 - turnColor &&
-        y - 2 >= 0 &&
-        x - 2 >= 0 &&
-        board[y - 2][x - 2] === 3 - turnColor &&
-        y - 3 >= 0 &&
-        x - 3 >= 0 &&
-        board[y - 3][x - 3] === turnColor) ||
-      (y - 1 >= 0 &&
-        x - 1 >= 0 &&
-        board[y - 1][x - 1] === 3 - turnColor &&
-        y - 2 >= 0 &&
-        x - 2 >= 0 &&
-        board[y - 2][x - 2] === 3 - turnColor &&
-        y - 3 >= 0 &&
-        x - 3 >= 0 &&
-        board[y - 3][x - 3] === 3 - turnColor &&
-        y - 4 >= 0 &&
-        x - 4 >= 0 &&
-        board[y - 4][x - 4] === turnColor) ||
-      (y - 1 >= 0 &&
-        x - 1 >= 0 &&
-        board[y - 1][x - 1] === 3 - turnColor &&
-        y - 2 >= 0 &&
-        x - 2 >= 0 &&
-        board[y - 2][x - 2] === 3 - turnColor &&
-        y - 3 >= 0 &&
-        x - 3 >= 0 &&
-        board[y - 3][x - 3] === 3 - turnColor &&
-        y - 4 >= 0 &&
-        x - 4 >= 0 &&
-        board[y - 4][x - 4] === 3 - turnColor &&
-        y - 5 >= 0 &&
-        x - 5 >= 0 &&
-        board[y - 5][x - 5] === turnColor) ||
-      (y - 1 >= 0 &&
-        x - 1 >= 0 &&
-        board[y - 1][x - 1] === 3 - turnColor &&
-        y - 2 >= 0 &&
-        x - 2 >= 0 &&
-        board[y - 2][x - 2] === 3 - turnColor &&
-        y - 3 >= 0 &&
-        x - 3 >= 0 &&
-        board[y - 3][x - 3] === 3 - turnColor &&
-        y - 4 >= 0 &&
-        x - 4 >= 0 &&
-        board[y - 4][x - 4] === 3 - turnColor &&
-        y - 5 >= 0 &&
-        x - 5 >= 0 &&
-        board[y - 5][x - 5] === 3 - turnColor &&
-        y - 6 >= 0 &&
-        x - 6 >= 0 &&
-        board[y - 6][x - 6] === turnColor) ||
-      (y - 1 >= 0 &&
-        x - 1 >= 0 &&
-        board[y - 1][x - 1] === 3 - turnColor &&
-        y - 2 >= 0 &&
-        x - 2 >= 0 &&
-        board[y - 2][x - 2] === 3 - turnColor &&
-        y - 3 >= 0 &&
-        x - 3 >= 0 &&
-        board[y - 3][x - 3] === 3 - turnColor &&
-        y - 4 >= 0 &&
-        x - 4 >= 0 &&
-        board[y - 4][x - 4] === 3 - turnColor &&
-        y - 5 >= 0 &&
-        x - 5 >= 0 &&
-        board[y - 5][x - 5] === 3 - turnColor &&
-        y - 6 >= 0 &&
-        x - 6 >= 0 &&
-        board[y - 6][x - 6] === 3 - turnColor &&
-        y - 7 >= 0 &&
-        x - 7 >= 0 &&
-        board[y - 7][x - 7] === turnColor)
-    ) {
-      newBoard[y][x] = turnColor;
-      for (const [dx, dy] of directions) {
-        let i = y + dy;
-        let j = x + dx;
-        const disksToFlip: [number, number][] = [];
-        while (i >= 0 && i < 8 && j >= 0 && j < 8) {
-          console.log('探索中の座標:', i, j, '駒の状態:', board[i]?.[j]);
-          if (board[i][j] === 0) {
-            break; // 空のマスならひっくり返せないので終了
-            console.log('ループ終了:', i, j);
-          } else if (board[i][j] === turnColor) {
-            // 自分の駒が見つかったら間の駒をひっくり返す
-            for (const [flipY, flipX] of disksToFlip) {
-              console.log('ひっくり返し処理:', flipY, flipX);
-              newBoard[flipY][flipX] = turnColor;
+    if (newBoard[y][x] === 0)
+      if (
+        (y - 1 >= 0 &&
+          board[y - 1][x] === 3 - turnColor &&
+          y - 2 >= 0 &&
+          board[y - 2][x] === turnColor) ||
+        (y - 1 >= 0 &&
+          board[y - 1][x] === 3 - turnColor &&
+          y - 2 >= 0 &&
+          board[y - 2][x] === 3 - turnColor &&
+          y - 3 >= 0 &&
+          board[y - 3][x] === turnColor) ||
+        (y - 1 >= 0 &&
+          board[y - 1][x] === 3 - turnColor &&
+          y - 2 >= 0 &&
+          board[y - 2][x] === 3 - turnColor &&
+          y - 3 >= 0 &&
+          board[y - 3][x] === 3 - turnColor &&
+          y - 4 >= 0 &&
+          board[y - 4][x] === turnColor) ||
+        (y - 1 >= 0 &&
+          board[y - 1][x] === 3 - turnColor &&
+          y - 2 >= 0 &&
+          board[y - 2][x] === 3 - turnColor &&
+          y - 3 >= 0 &&
+          board[y - 3][x] === 3 - turnColor &&
+          y - 4 >= 0 &&
+          board[y - 4][x] === 3 - turnColor &&
+          y - 5 >= 0 &&
+          board[y - 5][x] === turnColor) ||
+        (y - 1 >= 0 &&
+          board[y - 1][x] === 3 - turnColor &&
+          y - 2 >= 0 &&
+          board[y - 2][x] === 3 - turnColor &&
+          y - 3 >= 0 &&
+          board[y - 3][x] === 3 - turnColor &&
+          y - 4 >= 0 &&
+          board[y - 4][x] === 3 - turnColor &&
+          y - 5 >= 0 &&
+          board[y - 5][x] === 3 - turnColor &&
+          y - 6 >= 0 &&
+          board[y - 6][x] === turnColor) ||
+        (y - 1 >= 0 &&
+          board[y - 1][x] === 3 - turnColor &&
+          y - 2 >= 0 &&
+          board[y - 2][x] === 3 - turnColor &&
+          y - 3 >= 0 &&
+          board[y - 3][x] === 3 - turnColor &&
+          y - 4 >= 0 &&
+          board[y - 4][x] === 3 - turnColor &&
+          y - 5 >= 0 &&
+          board[y - 5][x] === 3 - turnColor &&
+          y - 6 >= 0 &&
+          board[y - 6][x] === 3 - turnColor &&
+          y - 7 >= 0 &&
+          board[y - 7][x] === turnColor) ||
+        (y + 1 < 8 &&
+          board[y + 1][x] === 3 - turnColor &&
+          y + 2 < 8 &&
+          board[y + 2][x] === turnColor) ||
+        (y + 1 < 8 &&
+          board[y + 1][x] === 3 - turnColor &&
+          y + 2 < 8 &&
+          board[y + 2][x] === 3 - turnColor &&
+          y + 3 < 8 &&
+          board[y + 3][x] === turnColor) ||
+        (y + 1 < 8 &&
+          board[y + 1][x] === 3 - turnColor &&
+          y + 2 < 8 &&
+          board[y + 2][x] === 3 - turnColor &&
+          y + 3 < 8 &&
+          board[y + 3][x] === 3 - turnColor &&
+          y + 4 < 8 &&
+          board[y + 4][x] === turnColor) ||
+        (y + 1 < 8 &&
+          board[y + 1][x] === 3 - turnColor &&
+          y + 2 < 8 &&
+          board[y + 2][x] === 3 - turnColor &&
+          y + 3 < 8 &&
+          board[y + 3][x] === 3 - turnColor &&
+          y + 4 < 8 &&
+          board[y + 4][x] === 3 - turnColor &&
+          y + 5 < 8 &&
+          board[y + 5][x] === turnColor) ||
+        (y + 1 < 8 &&
+          board[y + 1][x] === 3 - turnColor &&
+          y + 2 < 8 &&
+          board[y + 2][x] === 3 - turnColor &&
+          y + 3 < 8 &&
+          board[y + 3][x] === 3 - turnColor &&
+          y + 4 < 8 &&
+          board[y + 4][x] === 3 - turnColor &&
+          y + 5 < 8 &&
+          board[y + 5][x] === 3 - turnColor &&
+          y + 6 < 8 &&
+          board[y + 6][x] === turnColor) ||
+        (y + 1 < 8 &&
+          board[y + 1][x] === 3 - turnColor &&
+          y + 2 < 8 &&
+          board[y + 2][x] === 3 - turnColor &&
+          y + 3 < 8 &&
+          board[y + 3][x] === 3 - turnColor &&
+          y + 4 < 8 &&
+          board[y + 4][x] === 3 - turnColor &&
+          y + 5 < 8 &&
+          board[y + 5][x] === 3 - turnColor &&
+          y + 6 < 8 &&
+          board[y + 6][x] === 3 - turnColor &&
+          y + 7 < 8 &&
+          board[y + 7][x] === turnColor) ||
+        (x - 1 >= 0 &&
+          board[y][x - 1] === 3 - turnColor &&
+          x - 2 >= 0 &&
+          board[y][x - 2] === turnColor) ||
+        (x - 1 >= 0 &&
+          board[y][x - 1] === 3 - turnColor &&
+          x - 2 >= 0 &&
+          board[y][x - 2] === 3 - turnColor &&
+          x - 3 >= 0 &&
+          board[y][x - 3] === turnColor) ||
+        (x - 1 >= 0 &&
+          board[y][x - 1] === 3 - turnColor &&
+          x - 2 >= 0 &&
+          board[y][x - 2] === 3 - turnColor &&
+          x - 3 >= 0 &&
+          board[y][x - 3] === 3 - turnColor &&
+          x - 4 >= 0 &&
+          board[y][x - 4] === turnColor) ||
+        (x - 1 >= 0 &&
+          board[y][x - 1] === 3 - turnColor &&
+          x - 2 >= 0 &&
+          board[y][x - 2] === 3 - turnColor &&
+          x - 3 >= 0 &&
+          board[y][x - 3] === 3 - turnColor &&
+          x - 4 >= 0 &&
+          board[y][x - 4] === 3 - turnColor &&
+          x - 5 >= 0 &&
+          board[y][x - 5] === turnColor) ||
+        (x - 1 >= 0 &&
+          board[y][x - 1] === 3 - turnColor &&
+          x - 2 >= 0 &&
+          board[y][x - 2] === 3 - turnColor &&
+          x - 3 >= 0 &&
+          board[y][x - 3] === 3 - turnColor &&
+          x - 4 >= 0 &&
+          board[y][x - 4] === 3 - turnColor &&
+          x - 5 >= 0 &&
+          board[y][x - 5] === 3 - turnColor &&
+          x - 6 >= 0 &&
+          board[y][x - 6] === turnColor) ||
+        (x - 1 >= 0 &&
+          board[y][x - 1] === 3 - turnColor &&
+          x - 2 >= 0 &&
+          board[y][x - 2] === 3 - turnColor &&
+          x - 3 >= 0 &&
+          board[y][x - 3] === 3 - turnColor &&
+          x - 4 >= 0 &&
+          board[y][x - 4] === 3 - turnColor &&
+          x - 5 >= 0 &&
+          board[y][x - 5] === 3 - turnColor &&
+          x - 6 >= 0 &&
+          board[y][x - 6] === 3 - turnColor &&
+          x - 7 >= 0 &&
+          board[y][x - 7] === turnColor) ||
+        (x + 1 < 8 &&
+          board[y][x + 1] === 3 - turnColor &&
+          x + 2 < 8 &&
+          board[y][x + 2] === turnColor) ||
+        (x + 1 < 8 &&
+          board[y][x + 1] === 3 - turnColor &&
+          x + 2 < 8 &&
+          board[y][x + 2] === 3 - turnColor &&
+          x + 3 < 8 &&
+          board[y][x + 3] === turnColor) ||
+        (x + 1 < 8 &&
+          board[y][x + 1] === 3 - turnColor &&
+          x + 2 < 8 &&
+          board[y][x + 2] === 3 - turnColor &&
+          x + 3 < 8 &&
+          board[y][x + 3] === 3 - turnColor &&
+          x + 4 < 8 &&
+          board[y][x + 4] === turnColor) ||
+        (x + 1 < 8 &&
+          board[y][x + 1] === 3 - turnColor &&
+          x + 2 < 8 &&
+          board[y][x + 2] === 3 - turnColor &&
+          x + 3 < 8 &&
+          board[y][x + 3] === 3 - turnColor &&
+          x + 4 < 8 &&
+          board[y][x + 4] === 3 - turnColor &&
+          x + 5 < 8 &&
+          board[y][x + 5] === turnColor) ||
+        (x + 1 < 8 &&
+          board[y][x + 1] === 3 - turnColor &&
+          x + 2 < 8 &&
+          board[y][x + 2] === 3 - turnColor &&
+          x + 3 < 8 &&
+          board[y][x + 3] === 3 - turnColor &&
+          x + 4 < 8 &&
+          board[y][x + 4] === 3 - turnColor &&
+          x + 5 < 8 &&
+          board[y][x + 5] === 3 - turnColor &&
+          x + 6 < 8 &&
+          board[y][x + 6] === turnColor) ||
+        (x + 1 < 8 &&
+          board[y][x + 1] === 3 - turnColor &&
+          x + 2 < 8 &&
+          board[y][x + 2] === 3 - turnColor &&
+          x + 3 < 8 &&
+          board[y][x + 3] === 3 - turnColor &&
+          x + 4 < 8 &&
+          board[y][x + 4] === 3 - turnColor &&
+          x + 5 < 8 &&
+          board[y][x + 5] === 3 - turnColor &&
+          x + 6 < 8 &&
+          board[y][x + 6] === 3 - turnColor &&
+          x + 7 < 8 &&
+          board[y][x + 7] === turnColor) ||
+        (y + 1 < 8 &&
+          x + 1 < 8 &&
+          board[y + 1][x + 1] === 3 - turnColor &&
+          y + 2 < 8 &&
+          x + 2 < 8 &&
+          board[y + 2][x + 2] === turnColor) ||
+        (y + 1 < 8 &&
+          x + 1 < 8 &&
+          board[y + 1][x + 1] === 3 - turnColor &&
+          y + 2 < 8 &&
+          x + 2 < 8 &&
+          board[y + 2][x + 2] === 3 - turnColor &&
+          y + 3 < 8 &&
+          x + 3 < 8 &&
+          board[y + 3][x + 3] === turnColor) ||
+        (y + 1 < 8 &&
+          x + 1 < 8 &&
+          board[y + 1][x + 1] === 3 - turnColor &&
+          y + 2 < 8 &&
+          x + 2 < 8 &&
+          board[y + 2][x + 2] === 3 - turnColor &&
+          y + 3 < 8 &&
+          x + 3 < 8 &&
+          board[y + 3][x + 3] === 3 - turnColor &&
+          y + 4 < 8 &&
+          x + 4 < 8 &&
+          board[y + 4][x + 4] === turnColor) ||
+        (y + 1 < 8 &&
+          x + 1 < 8 &&
+          board[y + 1][x + 1] === 3 - turnColor &&
+          y + 2 < 8 &&
+          x + 2 < 8 &&
+          board[y + 2][x + 2] === 3 - turnColor &&
+          y + 3 < 8 &&
+          x + 3 < 8 &&
+          board[y + 3][x + 3] === 3 - turnColor &&
+          y + 4 < 8 &&
+          x + 4 < 8 &&
+          board[y + 4][x + 4] === 3 - turnColor &&
+          y + 5 < 8 &&
+          x + 5 < 8 &&
+          board[y + 5][x + 5] === turnColor) ||
+        (y + 1 < 8 &&
+          x + 1 < 8 &&
+          board[y + 1][x + 1] === 3 - turnColor &&
+          y + 2 < 8 &&
+          x + 2 < 8 &&
+          board[y + 2][x + 2] === 3 - turnColor &&
+          y + 3 < 8 &&
+          x + 3 < 8 &&
+          board[y + 3][x + 3] === 3 - turnColor &&
+          y + 4 < 8 &&
+          x + 4 < 8 &&
+          board[y + 4][x + 4] === 3 - turnColor &&
+          y + 5 < 8 &&
+          x + 5 < 8 &&
+          board[y + 5][x + 5] === 3 - turnColor &&
+          y + 6 < 8 &&
+          x + 6 < 8 &&
+          board[y + 6][x + 6] === turnColor) ||
+        (y + 1 < 8 &&
+          x + 1 < 8 &&
+          board[y + 1][x + 1] === 3 - turnColor &&
+          y + 2 < 8 &&
+          x + 2 < 8 &&
+          board[y + 2][x + 2] === 3 - turnColor &&
+          y + 3 < 8 &&
+          x + 3 < 8 &&
+          board[y + 3][x + 3] === 3 - turnColor &&
+          y + 4 < 8 &&
+          x + 4 < 8 &&
+          board[y + 4][x + 4] === 3 - turnColor &&
+          y + 5 < 8 &&
+          x + 5 < 8 &&
+          board[y + 5][x + 5] === 3 - turnColor &&
+          y + 6 < 8 &&
+          x + 6 < 8 &&
+          board[y + 6][x + 6] === 3 - turnColor &&
+          y + 7 < 8 &&
+          x + 7 < 8 &&
+          board[y + 7][x + 7] === turnColor) ||
+        (y + 1 < 8 &&
+          x - 1 >= 0 &&
+          board[y + 1][x - 1] === 3 - turnColor &&
+          y + 2 < 8 &&
+          x - 2 >= 0 &&
+          board[y + 2][x - 2] === turnColor) ||
+        (y + 1 < 8 &&
+          x - 1 >= 0 &&
+          board[y + 1][x - 1] === 3 - turnColor &&
+          y + 2 < 8 &&
+          x - 2 >= 0 &&
+          board[y + 2][x - 2] === 3 - turnColor &&
+          y + 3 < 8 &&
+          x - 3 >= 0 &&
+          board[y + 3][x - 3] === turnColor) ||
+        (y + 1 < 8 &&
+          x - 1 >= 0 &&
+          board[y + 1][x - 1] === 3 - turnColor &&
+          y + 2 < 8 &&
+          x - 2 >= 0 &&
+          board[y + 2][x - 2] === 3 - turnColor &&
+          y + 3 < 8 &&
+          x - 3 >= 0 &&
+          board[y + 3][x - 3] === 3 - turnColor &&
+          y + 4 < 8 &&
+          x - 4 >= 0 &&
+          board[y + 4][x - 4] === turnColor) ||
+        (y + 1 < 8 &&
+          x - 1 >= 0 &&
+          board[y + 1][x - 1] === 3 - turnColor &&
+          y + 2 < 8 &&
+          x - 2 >= 0 &&
+          board[y + 2][x - 2] === 3 - turnColor &&
+          y + 3 < 8 &&
+          x - 3 >= 0 &&
+          board[y + 3][x - 3] === 3 - turnColor &&
+          y + 4 < 8 &&
+          x - 4 >= 0 &&
+          board[y + 4][x - 4] === 3 - turnColor &&
+          y + 5 < 8 &&
+          x - 5 >= 0 &&
+          board[y + 5][x - 5] === turnColor) ||
+        (y + 1 < 8 &&
+          x - 1 >= 0 &&
+          board[y + 1][x - 1] === 3 - turnColor &&
+          y + 2 < 8 &&
+          x - 2 >= 0 &&
+          board[y + 2][x - 2] === 3 - turnColor &&
+          y + 3 < 8 &&
+          x - 3 >= 0 &&
+          board[y + 3][x - 3] === 3 - turnColor &&
+          y + 4 < 8 &&
+          x - 4 >= 0 &&
+          board[y + 4][x - 4] === 3 - turnColor &&
+          y + 5 < 8 &&
+          x - 5 >= 0 &&
+          board[y + 5][x - 5] === 3 - turnColor &&
+          y + 6 < 8 &&
+          x - 6 >= 0 &&
+          board[y + 6][x - 6] === turnColor) ||
+        (y + 1 < 8 &&
+          x - 1 >= 0 &&
+          board[y + 1][x - 1] === 3 - turnColor &&
+          y + 2 < 8 &&
+          x - 2 >= 0 &&
+          board[y + 2][x - 2] === 3 - turnColor &&
+          y + 3 < 8 &&
+          x - 3 >= 0 &&
+          board[y + 3][x - 3] === 3 - turnColor &&
+          y + 4 < 8 &&
+          x - 4 >= 0 &&
+          board[y + 4][x - 4] === 3 - turnColor &&
+          y + 5 < 8 &&
+          x - 5 >= 0 &&
+          board[y + 5][x - 5] === 3 - turnColor &&
+          y + 6 < 8 &&
+          x - 6 >= 0 &&
+          board[y + 6][x - 6] === 3 - turnColor &&
+          y + 7 < 8 &&
+          x - 7 >= 0 &&
+          board[y + 7][x - 7] === turnColor) ||
+        (y - 1 >= 0 &&
+          x + 1 < 8 &&
+          board[y - 1][x + 1] === 3 - turnColor &&
+          y - 2 >= 0 &&
+          x + 2 < 8 &&
+          board[y - 2][x + 2] === turnColor) ||
+        (y - 1 >= 0 &&
+          x + 1 < 8 &&
+          board[y - 1][x + 1] === 3 - turnColor &&
+          y - 2 >= 0 &&
+          x + 2 < 8 &&
+          board[y - 2][x + 2] === 3 - turnColor &&
+          y - 3 >= 0 &&
+          x + 3 < 8 &&
+          board[y - 3][x + 3] === turnColor) ||
+        (y - 1 >= 0 &&
+          x + 1 < 8 &&
+          board[y - 1][x + 1] === 3 - turnColor &&
+          y - 2 >= 0 &&
+          x + 2 < 8 &&
+          board[y - 2][x + 2] === 3 - turnColor &&
+          y - 3 >= 0 &&
+          x + 3 < 8 &&
+          board[y - 3][x + 3] === 3 - turnColor &&
+          y - 4 >= 0 &&
+          x + 4 < 8 &&
+          board[y - 4][x + 4] === turnColor) ||
+        (y - 1 >= 0 &&
+          x + 1 < 8 &&
+          board[y - 1][x + 1] === 3 - turnColor &&
+          y - 2 >= 0 &&
+          x + 2 < 8 &&
+          board[y - 2][x + 2] === 3 - turnColor &&
+          y - 3 >= 0 &&
+          x + 3 < 8 &&
+          board[y - 3][x + 3] === 3 - turnColor &&
+          y - 4 >= 0 &&
+          x + 4 < 8 &&
+          board[y - 4][x + 4] === 3 - turnColor &&
+          y - 5 >= 0 &&
+          x + 5 < 8 &&
+          board[y - 5][x + 5] === turnColor) ||
+        (y - 1 >= 0 &&
+          x + 1 < 8 &&
+          board[y - 1][x + 1] === 3 - turnColor &&
+          y - 2 >= 0 &&
+          x + 2 < 8 &&
+          board[y - 2][x + 2] === 3 - turnColor &&
+          y - 3 >= 0 &&
+          x + 3 < 8 &&
+          board[y - 3][x + 3] === 3 - turnColor &&
+          y - 4 >= 0 &&
+          x + 4 < 8 &&
+          board[y - 4][x + 4] === 3 - turnColor &&
+          y - 5 >= 0 &&
+          x + 5 < 8 &&
+          board[y - 5][x + 5] === 3 - turnColor &&
+          y - 6 >= 0 &&
+          x + 6 < 8 &&
+          board[y - 6][x + 6] === turnColor) ||
+        (y - 1 >= 0 &&
+          x + 1 < 8 &&
+          board[y - 1][x + 1] === 3 - turnColor &&
+          y - 2 >= 0 &&
+          x + 2 < 8 &&
+          board[y - 2][x + 2] === 3 - turnColor &&
+          y - 3 >= 0 &&
+          x + 3 < 8 &&
+          board[y - 3][x + 3] === 3 - turnColor &&
+          y - 4 >= 0 &&
+          x + 4 < 8 &&
+          board[y - 4][x + 4] === 3 - turnColor &&
+          y - 5 >= 0 &&
+          x + 5 < 8 &&
+          board[y - 5][x + 5] === 3 - turnColor &&
+          y - 6 >= 0 &&
+          x + 6 < 8 &&
+          board[y - 6][x + 6] === 3 - turnColor &&
+          y - 7 >= 0 &&
+          x + 7 < 8 &&
+          board[y - 7][x + 7] === turnColor) ||
+        (y - 1 >= 0 &&
+          x - 1 >= 0 &&
+          board[y - 1][x - 1] === 3 - turnColor &&
+          y - 2 >= 0 &&
+          x - 2 >= 0 &&
+          board[y - 2][x - 2] === turnColor) ||
+        (y - 1 >= 0 &&
+          x - 1 >= 0 &&
+          board[y - 1][x - 1] === 3 - turnColor &&
+          y - 2 >= 0 &&
+          x - 2 >= 0 &&
+          board[y - 2][x - 2] === 3 - turnColor &&
+          y - 3 >= 0 &&
+          x - 3 >= 0 &&
+          board[y - 3][x - 3] === turnColor) ||
+        (y - 1 >= 0 &&
+          x - 1 >= 0 &&
+          board[y - 1][x - 1] === 3 - turnColor &&
+          y - 2 >= 0 &&
+          x - 2 >= 0 &&
+          board[y - 2][x - 2] === 3 - turnColor &&
+          y - 3 >= 0 &&
+          x - 3 >= 0 &&
+          board[y - 3][x - 3] === 3 - turnColor &&
+          y - 4 >= 0 &&
+          x - 4 >= 0 &&
+          board[y - 4][x - 4] === turnColor) ||
+        (y - 1 >= 0 &&
+          x - 1 >= 0 &&
+          board[y - 1][x - 1] === 3 - turnColor &&
+          y - 2 >= 0 &&
+          x - 2 >= 0 &&
+          board[y - 2][x - 2] === 3 - turnColor &&
+          y - 3 >= 0 &&
+          x - 3 >= 0 &&
+          board[y - 3][x - 3] === 3 - turnColor &&
+          y - 4 >= 0 &&
+          x - 4 >= 0 &&
+          board[y - 4][x - 4] === 3 - turnColor &&
+          y - 5 >= 0 &&
+          x - 5 >= 0 &&
+          board[y - 5][x - 5] === turnColor) ||
+        (y - 1 >= 0 &&
+          x - 1 >= 0 &&
+          board[y - 1][x - 1] === 3 - turnColor &&
+          y - 2 >= 0 &&
+          x - 2 >= 0 &&
+          board[y - 2][x - 2] === 3 - turnColor &&
+          y - 3 >= 0 &&
+          x - 3 >= 0 &&
+          board[y - 3][x - 3] === 3 - turnColor &&
+          y - 4 >= 0 &&
+          x - 4 >= 0 &&
+          board[y - 4][x - 4] === 3 - turnColor &&
+          y - 5 >= 0 &&
+          x - 5 >= 0 &&
+          board[y - 5][x - 5] === 3 - turnColor &&
+          y - 6 >= 0 &&
+          x - 6 >= 0 &&
+          board[y - 6][x - 6] === turnColor) ||
+        (y - 1 >= 0 &&
+          x - 1 >= 0 &&
+          board[y - 1][x - 1] === 3 - turnColor &&
+          y - 2 >= 0 &&
+          x - 2 >= 0 &&
+          board[y - 2][x - 2] === 3 - turnColor &&
+          y - 3 >= 0 &&
+          x - 3 >= 0 &&
+          board[y - 3][x - 3] === 3 - turnColor &&
+          y - 4 >= 0 &&
+          x - 4 >= 0 &&
+          board[y - 4][x - 4] === 3 - turnColor &&
+          y - 5 >= 0 &&
+          x - 5 >= 0 &&
+          board[y - 5][x - 5] === 3 - turnColor &&
+          y - 6 >= 0 &&
+          x - 6 >= 0 &&
+          board[y - 6][x - 6] === 3 - turnColor &&
+          y - 7 >= 0 &&
+          x - 7 >= 0 &&
+          board[y - 7][x - 7] === turnColor)
+      ) {
+        newBoard[y][x] = turnColor;
+        for (const [dx, dy] of directions) {
+          let i = y + dy;
+          let j = x + dx;
+          const disksToFlip: [number, number][] = [];
+          while (i >= 0 && i < 8 && j >= 0 && j < 8) {
+            console.log('探索中の座標:', i, j, '駒の状態:', board[i]?.[j]);
+            if (board[i][j] === 0) {
+              break; // 空のマスならひっくり返せないので終了
+              console.log('ループ終了:', i, j);
+            } else if (board[i][j] === turnColor) {
+              // 自分の駒が見つかったら間の駒をひっくり返す
+              for (const [flipY, flipX] of disksToFlip) {
+                console.log('ひっくり返し処理:', flipY, flipX);
+                newBoard[flipY][flipX] = turnColor;
+              }
+              break;
+            } else {
+              // 相手の駒ならリストに追加
+              disksToFlip.push([i, j]);
+              console.log('ひっくり返す候補:', JSON.stringify(disksToFlip));
             }
-            break;
-          } else {
-            // 相手の駒ならリストに追加
-            disksToFlip.push([i, j]);
-            console.log('ひっくり返す候補:', JSON.stringify(disksToFlip));
+            i += dy;
+            j += dx;
           }
-          i += dy;
-          j += dx;
         }
+        setBoard(newBoard);
+        setTurnColor(3 - turnColor);
       }
-      setBoard(newBoard);
-      setTurnColor(3 - turnColor);
-    }
   };
-
   return (
     <div className={styles.container}>
       <div className={styles.board}>
