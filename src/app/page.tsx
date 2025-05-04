@@ -577,21 +577,15 @@ export default function Home() {
           let j = x + dx;
           const disksToFlip: [number, number][] = [];
           while (i >= 0 && i < 8 && j >= 0 && j < 8) {
-            console.log('探索中の座標:', i, j, '駒の状態:', board[i]?.[j]);
             if (board[i][j] === 0) {
-              break; // 空のマスならひっくり返せないので終了
-              console.log('ループ終了:', i, j);
+              break;
             } else if (board[i][j] === turnColor) {
-              // 自分の駒が見つかったら間の駒をひっくり返す
               for (const [flipY, flipX] of disksToFlip) {
-                console.log('ひっくり返し処理:', flipY, flipX);
                 newBoard[flipY][flipX] = turnColor;
               }
               break;
             } else {
-              // 相手の駒ならリストに追加
               disksToFlip.push([i, j]);
-              console.log('ひっくり返す候補:', JSON.stringify(disksToFlip));
             }
             i += dy;
             j += dx;
